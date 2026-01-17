@@ -5,465 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio website </title>
     <link rel="icon" href="logo.jpg">
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #0c8eda;
-            --light-color: #1992b1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --text-light: #7f8c8d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f9f9f9;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .logo span {
-            color: var(--accent-color);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--primary-color);
-        }
-        
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-        }
-        
-        /* Main Content Styles */
-        main {
-            margin-top: 80px;
-            padding: 40px 0;
-            min-height: calc(100vh - 160px);
-        }
-        
-        .page {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        .page.active {
-            display: block;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* About Page Styles */
-        .about-section {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-        
-        .profile-img {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .profile-img img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-content {
-            flex: 2;
-            min-width: 300px;
-        }
-        
-        .about-content h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-        
-        .about-content h1 span {
-            color: var(--primary-color);
-        }
-        
-        .about-content h2 {
-            font-size: 24px;
-            margin: 20px 0 10px;
-            color: var(--secondary-color);
-        }
-        
-        .contact-info {
-            margin: 20px 0;
-        }
-        
-        .contact-info p {
-            margin-bottom: 8px;
-        }
-        
-        .links a {
-            display: inline-block;
-            margin-right: 15px;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .links a:hover {
-            text-decoration: underline;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .skill {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-        
-        /* Academic Page Styles */
-        .education-item {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-        
-        .education-item h3 {
-            font-size: 20px;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .education-item .institution {
-            font-weight: 600;
-        }
-        
-        .education-item .date {
-            color: var(--text-light);
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        
-        /* Experience Page Styles */
-        .experience-item {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-        
-        .experience-item h3 {
-            font-size: 20px;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .experience-item .company {
-            font-weight: 600;
-            color: var(--secondary-color);
-        }
-        
-        .experience-item .date {
-            color: var(--text-light);
-            margin: 10px 0 15px;
-            font-size: 14px;
-        }
-        
-        .experience-item ul {
-            padding-left: 20px;
-        }
-        
-        .experience-item li {
-            margin-bottom: 8px;
-        }
-        
-        /* Certifications Page Styles */
-        .certifications {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .certification-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        
-        .certification-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .cert-img {
-            height: 180px;
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .cert-img i {
-            font-size: 60px;
-            color: #666;
-        }
-        
-        .cert-content {
-            padding: 20px;
-        }
-        
-        .cert-content h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--secondary-color);
-        }
-        
-        .cert-content .issuer {
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        
-        .cert-content .date {
-            color: var(--text-light);
-            font-size: 13px;
-        }
-        
-        /* Projects Page Styles */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project-img {
-            height: 180px;
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .project-img i {
-            font-size: 60px;
-            color: #666;
-        }
-        
-        .project-content {
-            padding: 20px;
-        }
-        
-        .project-content h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--secondary-color);
-        }
-        
-        .project-content p {
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .project-tag {
-            background-color: var(--light-color);
-            color: var(--text-color);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-        }
-        
-        /* Achievements Page Styles */
-        .achievements-list {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-        
-        .achievements-list h3 {
-            font-size: 20px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .achievements-list ul {
-            padding-left: 20px;
-        }
-        
-        .achievements-list li {
-            margin-bottom: 10px;
-        }
-        
-        /* Footer Styles */
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        
-        .social-links {
-            margin-bottom: 20px;
-        }
-        
-        .social-links a {
-            color: white;
-            margin: 0 10px;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                padding-top: 40px;
-                transition: left 0.3s;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .about-section {
-                flex-direction: column;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">K.<span>Karmugilan</span></div>
-                <div class="menu-toggle">☰</div>
-                <ul class="nav-links">
-                    <li><a href="#" class="nav-link active" data-page="about">About</a></li>
-                    <li><a href="#" class="nav-link" data-page="academic">Academic</a></li>
-                    <li><a href="#" class="nav-link" data-page="experience">Experience</a></li>
-                    <li><a href="#" class="nav-link" data-page="certifications">Courses & Certifications</a></li>
-                    <li><a href="#" class="nav-link" data-page="projects">Projects</a></li>
-                    <li><a href="#" class="nav-link" data-page="achievements">Achievements</a></li>
+    <!-- navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <div class="container-fluid">
+  <a class="navbar-brand" href="#">my porfolio</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="#about">About</a>
+    </li>
+        <li class="nav-item ">
+        <a class="nav-link" href="#academic">Academic</a>
+    </li>
+        <li class="nav-item ">
+        <a class="nav-link" href="#experience">Experience</a>
+    </li>
+        <li class="nav-item ">
+        <a class="nav-link" href="#certifications">Courses & Certifications</a>
+    </li>
+        <li class="nav-item ">
+        <a class="nav-link" href="#project">Projects</a>
+    </li>
+        <li class="nav-item ">
+        <a class="nav-link" href="#achievements">Achievements</a>
+    </li>
                 </ul>
-            </nav>
+            </div>
         </div>
-    </header>
-
+            </nav>
     <!-- Main Content -->
     <main>
-        <div class="container">
             <!-- About Page -->
-            <section id="about" class="page active">
-                <div class="about-section">
+            <section id="about" class="section">
                     <div class="profile-img">
                         <img src="my photo.jpg" alt="K. Karmugilan">
                     </div>
@@ -482,19 +63,16 @@
                         
                         <h2>Skills</h2>
                         <div class="skills">
-                            <span class="skill">React.js</span>
-                            <span class="skill">Node.js</span>
-                            <span class="skill">Express.js</span>
-                            <span class="skill">MongoDB</span>
-                            <span class="skill">Data Structures</span>
-                            <span class="skill">Algorithms</span>
-                            <span class="skill">Java SE</span>
-                            <span class="skill">C</span>
-                            <span class="skill">C++</span>
-                            <span class="skill">OOPS</span>
-                            <span class="skill">JavaScript</span>
-                            <span class="skill">HTML</span>
-                            <span class="skill">CSS</span>
+                            <span class="skill"><i class="devicon-html5-plain colored"></i>></span>
+                            <span class="skill"><i class="devicon-javascript-plain colored"></i></span>
+                            <span class="skill"><i class="devicon-css3-plain colored"></i></span>
+                            <span class="skill"><i class="devicon-react-original colored"></i></span>
+                            <span class="skill"><i class="devicon-django-plain colored"></i></span>
+                            <span class="skill"><i class="devicon-bootstrap-plain colored"></i></span>
+                            <span class="skill"><i class="devicon-spring-original colored"></i></span>
+                            <span class="skill"><i class="devicon-mongodb-plain colored"></i></span>
+                            <span class="skill"><i class="devicon-express-original colored"></i></span>
+                            <span class="skill"><i class="devicon-nodejs-plain colored"></i></span>
                         </div>
                         
                         <h2>Additional Links</h2>
@@ -503,12 +81,35 @@
                             <a href="https://github.com/Karmugilan015" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                             <a href="https://leetcode.com/vqPrtAvUFb" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
                         </div>
-                    </div>
-                </div>
+                
+                <div class="hire-form">
+  <h2>contact me</h2>
+
+  <form action="/submit-hireme" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <select name="role" required>
+      <option value="">Select Job Role</option>
+      <option value="Front End Developer">Front End Developer</option>
+      <option value="Full Stack Developer">Full Stack Developer</option>
+    </select>
+
+    <textarea name="message" placeholder="Your Message" rows="4"></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="boy">
+    <a href="tel:+919092802116" class="call"><i class="fa-solid fa-phone"></i></a>
+    <a href="https://wa.me/919092802116" target="_blank" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+</div>
+                        
             </section>
 
             <!-- Academic Page -->
-            <section id="academic" class="page">
+            <section id="academic"  class="section">
                 <h1>Academic Qualification</h1>
                 <div class="education-item">
                     <h3>Bachelor of Engineering | Electronics and Communication Engineering</h3>
@@ -540,8 +141,7 @@
             </section>
 
             <!-- Experience Page -->
-            <section id="experience" class="page">
-
+            <section id="experience" class="section">
                 <h1>Professional Experience</h1>
                 <div class="experience-item">
                     <h3>AI/ML Intern</h3>
@@ -587,16 +187,8 @@
                 </div>
             </section>
 
-            <!-- Certifications Page -->
-            <!-- In the navigation menu -->
-<ul class="nav-links">
-    <!-- Other nav items -->
-    <li><a href="#" class="nav-link" data-page="certifications">Courses & Certifications</a></li>
-    <!-- Other nav items -->
-</ul>
-
 <!-- Courses & Certifications Section -->
-<section id="certifications" class="page">
+<section id="certifications" class="section">
     <h1>Courses & Certifications</h1>
     <div class="certifications">
         <!-- Full Stack Development -->
@@ -698,7 +290,7 @@
     </div>
 </section>
             <!-- Projects Page -->
-            <section id="projects" class="page">
+            <section id="project" class="section">
                 <h1>Projects</h1>
                 <div class="projects">
                     <div class="project-card">
@@ -709,12 +301,10 @@
                             <h3>Finance Expense Management with MERN Stack</h3>
                             <p>The Expense Management Project is a MERN stack platform for creating, viewing, editing, and deleting expenses with real-time updates.</p>
                             <div class="project-tags">
-                                <span class="project-tag">MongoDB</span>
-                                <span class="project-tag">Express.js</span>
-                                <span class="project-tag">React</span>
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">JWT</span>
-                                <span class="project-tag">Socket.io</span>
+                                <span class="project-tag"><i class="devicon-mongodb-plain colored"width="20px"></i></span>
+                                <span class="project-tag"><i class="devicon-express-original colored"width="20px"></i></span>
+                                <span class="project-tag"><i class="devicon-react-original colored"width="20px"></i></span>
+                                <span class="project-tag"><i class="devicon-nodejs-plain colored" width="20px"></i></span>
                            <a href="https://fin-manager-aj52.onrender.com" 
    class="certificate-btn with-icon">
   <i class="fas fa-external-link-alt"></i>
@@ -731,10 +321,10 @@
                             <h3>aution website with MERN Stack</h3>
                             <p>A MERN-stack based aution website designed to simplify autioning, buying, and selling by unifying all aution-related tasks.</p>
                             <div class="project-tags">
-                                <span class="project-tag">MongoDB</span>
-                                <span class="project-tag">Express.js</span>
-                                <span class="project-tag">React</span>
-                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag"><i class="devicon-mongodb-plain colored"width="20px"></i></span>
+                                <span class="project-tag"><i class="devicon-express-original colored"width="20px"></i></span>
+                                <span class="project-tag"><i class="devicon-react-original colored"width="20px"></i></span>
+                                <span class="project-tag"><i class="devicon-nodejs-plain colored" width="20px"></i></span>
                            <a href="https://aution-web.onrender.com" 
    class="certificate-btn with-icon">
   <i class="fas fa-external-link-alt"></i>
@@ -746,7 +336,7 @@
             </section>
 
             <!-- Achievements Page -->
-            <section id="achievements" class="page">
+            <section id="achievements" class="section">
                 <h1>Achievements</h1>
                 <div class="achievements-list">
                     <h3>Coding Achievements</h3>
@@ -758,82 +348,13 @@
             </section>
         </div>
     </main>
-
     <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/karmugilan-k" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Karmugilan015" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://leetcode.com/vqPrtAvUFb" target="_blank"><i class="fas fa-code"></i></a>
-            </div>
+    <footer >
+        <div class="footer">
             <p>&copy; 2023 K. Karmugilan. All rights reserved.</p>
         </div>
     </footer>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 
-    <!-- Internal JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Navigation functionality
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pages = document.querySelectorAll('.page');
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navList = document.querySelector('.nav-links');
-            
-            // Handle page navigation
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Get the page to show
-                    const pageId = this.getAttribute('data-page');
-                    
-                    // Update active nav link
-                    navLinks.forEach(navLink => navLink.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Show the selected page
-                    pages.forEach(page => {
-                        page.classList.remove('active');
-                        if (page.id === pageId) {
-                            page.classList.add('active');
-                        }
-                    });
-                    
-                    // Close mobile menu if open
-                    navList.classList.remove('active');
-                    
-                    // Update page title
-                    const pageTitle = this.textContent;
-                    document.title = `K. Karmugilan | ${pageTitle}`;
-                    
-                    // Scroll to top
-                    window.scrollTo(0, 0);
-                });
-            });
-            
-            // Mobile menu toggle
-            menuToggle.addEventListener('click', function() {
-                navList.classList.toggle('active');
-            });
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('nav') && navList.classList.contains('active')) {
-                    navList.classList.remove('active');
-                }
-            });
-            
-            // Check for hash in URL on page load
-            if (window.location.hash) {
-                const pageId = window.location.hash.substring(1);
-                const correspondingLink = document.querySelector(`.nav-link[data-page="${pageId}"]`);
-                
-                if (correspondingLink) {
-                    correspondingLink.click();
-                }
-            }
-        });
-    </script>
-</body>
-</html>
+    </html>
