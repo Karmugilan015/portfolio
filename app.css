@@ -44,17 +44,28 @@
         .section h1,h2{
             background:linear-gradient(120deg,#2d033b ,#7b2cbf ,#ff77c6,#5a189a);-webkit-background-clip: text;-webkit-text-fill-color:transparent;background-position: right center;
         }
-    .profile-img{padding-top: 200px;
+        
+    .profile-img{
+            padding-top: 200px;
             display: flex;
             width: 40px;
             justify-content: center;
             align-items: center;
         }
+        button {
+            padding: 10px;
+            border-radius: 10px!important;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            background:linear-gradient(120deg,#2d033b ,#7b2cbf ,#ff77c6,#5a189a)!important;
+        }
         
         
-        .links {background:linear-gradient(120deg,#03123b ,#2c84bf ,#ff77c6,#3797e6);-webkit-background-clip: text;-webkit-text-fill-color:transparent;background-position: right center;
-    
-             margin-top: 15px;
+        .links {
+            background:linear-gradient(120deg,#03123b ,#2c84bf ,#ff77c6,#3797e6);-webkit-background-clip: text;-webkit-text-fill-color:transparent;background-position: right center;
+            font-size: 30px;
+            margin-top: 15px;
         }
         .skills {
             display:flex;
@@ -62,31 +73,19 @@
             gap: 10px;
             margin-top: 20px;
         }
-
-        .icon {
-  font-size: 22px;
-  color: #25D366;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-.icon:hover {
-   background:linear-gradient(120deg,#2d033b ,#7b2cbf ,#ff77c6,#5a189a);
-}
-
         
         .skill {
             background:linear-gradient(120deg,#03123b ,#2c84bf ,#ff77c6,#3797e6)!important;
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 30px;
         }.hire-form {
-            justify-content: left;
-            align-items: left;
+      justify-content:center;
+      align-items: left;
       width: 360px;
       margin: 50px auto;
-      background:black;
+      background:linear-gradient(120deg,#03123b ,#2c84bf ,#ff77c6,#3797e6)!important;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -94,6 +93,7 @@
     .hire-form h2 {
       text-align: center;
     }
+    
     .hire-form input,
     .hire-form select,
     .hire-form textarea,
@@ -104,7 +104,7 @@
       font-size: 14px;
     }
     .hire-form button {
-      background:linear-gradient(120deg,#03123b ,#2c84bf ,#ff77c6,#3797e6)!important;
+      background:linear-gradient(120deg,#2d033b ,#7b2cbf ,#ff77c6,#5a189a)!important;
       color: white;
       border: none;
       cursor: pointer;
@@ -119,11 +119,11 @@
       border-radius: 5px;
     }
     .call {
-      background:linear-gradient(120deg,#03123b ,#2c84bf ,#ff77c6,#3797e6);
+      background:linear-gradient(120deg,#2d033b ,#7b2cbf ,#ff77c6,#5a189a);
       color: white;
     }
     .whatsapp {
-      background:linear-gradient(120deg,#03123b ,#2c84bf ,#ff77c6,#3797e6);
+      background:linear-gradient(120deg,#2d033b ,#7b2cbf ,#ff77c6,#5a189a);
       color: white;
     }
 
@@ -211,15 +211,11 @@
         }
         
         .cert-img {
-            height: 180px;
-            background-color: #f0f0f0;
-            display: grid;
+            display: flex;
+            height: fit-content;
+            max-width: fit-content;
         }
         
-        .cert-img i {
-            font-size: 60px;
-            color: #666;
-        }
         
         .cert-content {
             padding: 20px;
@@ -268,9 +264,9 @@
         }
         
         .project-img {
-            height: 180px;
-            background-color: #f0f0f0;
-            display: grid;
+            width: fit-content;
+            display: flex;
+            height: fit-content;
         }
         
         .project-img i {
@@ -304,7 +300,8 @@
             color: var(--text-color);
             padding: 4px 10px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 30px;
+            width: 60px;
         }
         
         /* Achievements Page Styles */
