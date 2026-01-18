@@ -46,11 +46,11 @@
         }
         
     .profile-img{
-            padding-top: 200px;
-            display: flex;
-            width: 40px;
-            justify-content: center;
-            align-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+            }
         }
         button {
             padding: 10px;
@@ -344,4 +344,5 @@
             background:linear-gradient(120deg,#2d033b ,#7b2cbf ,#ff77c6,#5a189a)!important;
             color: white;
         }
+
         
