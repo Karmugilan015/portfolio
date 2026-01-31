@@ -124,8 +124,8 @@ body {
         }
         .hippo{
             margin-top:30px;
-            width:450px;
-            height:400PX;
+            width:fit-content;
+            height:fit-content;
         }
         .hero{
             display:flex;
@@ -148,7 +148,7 @@ body {
         }#hire-form {
       justify-content:center;
       align-items: left;
-      width: 450px;
+      width: fit-content;
       height:fit-content;
       margin-top: 30px;
       background:linear-gradient(120deg,#03123b ,#2c84bf ,#ff77c6,#3797e6)!important;
@@ -438,5 +438,6 @@ body {
         }
 
         
+
 
 
