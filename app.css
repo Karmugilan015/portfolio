@@ -17,6 +17,7 @@ body {
     box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4),inset 0px -1px 2px rgba(0,0,0,0.4) 0 8px 20px rgba(0, 0, 0, .3);
     position: fixed;
     display: grid;
+    height: fit-content;
     width: 100%;
     top: 0;
     z-index: 100;
@@ -52,6 +53,7 @@ body {
             margin-left: 30 px;
             font-size: clamp(1rem, 2.5vw, 1.2rem);
   border-left: 5px solid #2183e6;
+  margin-left:25px;
   padding: 8px 10px;
   background: #f8f9fa;
   text-transform: uppercase;
@@ -190,7 +192,7 @@ body {
             justify-items: center;
 
         }
-         .education-item {
+         .education-card {
             width:80%;
             display: grid;
             background:linear-gradient(120deg,#03123b ,#2c84bf ,#ff77c6,#3797e6)!important;
@@ -199,6 +201,10 @@ body {
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 30px;
         }
+         .education-card:hover{
+             transform: translateY(-5px);
+            background:linear-gradient(120deg,#033b14 ,#2cbf69 ,#77dfff,#3797e6)!important;
+         }
         
         .education-item h3 {
             font-size: 20px;
@@ -224,7 +230,7 @@ body {
             justify-content: center;
             justify-items: center;
         }
-        .experience-item {
+        .experience-card{
             width:80%;
             display:flex;
             flex-direction:column;
@@ -234,7 +240,10 @@ body {
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 30px;
         }
-        
+          .experience-card:hover{
+             transform: translateY(-5px);
+            background:linear-gradient(120deg,#033b14 ,#2cbf69 ,#77dfff,#3797e6)!important;
+        }
         
         .experience-item h3 {
             font-size: 20px;
@@ -426,6 +435,7 @@ body {
         }
 
         
+
 
 
 
